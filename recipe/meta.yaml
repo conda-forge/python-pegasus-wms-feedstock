@@ -1,6 +1,6 @@
 {% set name = "python-pegasus-wms" %}
-{% set version = "4.9.0" %}
-{% set sha256 = "8208cbca121a6163e74ba90bd6f8b2ef39017af1b1f561d817ce257352225cfc" %}
+{% set version = "4.9.1" %}
+{% set sha256 = "4b9c3e2a302e15d1859bd47f13cbcc05fa51bfb4f75480d78d8024ced5a8ecec" %}
 
 package:
   name: {{ name|lower }}
