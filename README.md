@@ -1,7 +1,3 @@
-<!--
-# -*- mode: jinja -*-
--->
-
 About python-pegasus-wms
 ========================
 
@@ -27,8 +23,15 @@ This package contains the Python APIs for Pegasus WMS, including:
 Current build status
 ====================
 
-All platforms:
-[![noarch](https://img.shields.io/circleci/project/github/conda-forge/python-pegasus-wms-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/python-pegasus-wms-feedstock)
+
+<table><tr><td>All platforms:</td>
+    <td>
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6113&branchName=master">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/python-pegasus-wms-feedstock?branchName=master">
+      </a>
+    </td>
+  </tr>
+</table>
 
 Current release info
 ====================
