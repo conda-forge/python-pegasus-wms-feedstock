@@ -10,6 +10,8 @@ source:
   url: "http://download.pegasus.isi.edu/pegasus/{{ version }}/pegasus-python-source-{{ version }}.tar.gz"
   sha256: "{{ sha256 }}"
   patches:
+    # loosen requirements
+    - requirements.patch
     # remove call to deprecated commands module
     - commands.patch
     # fix indentation
@@ -23,7 +25,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
 
 requirements:
@@ -44,7 +46,7 @@ requirements:
     - markupsafe >=1.0
     - pamela
     - psycopg2 >=2.6
-    - pyopenssl >=16.2.0
+    - pyopenssl >=17.5.0
     - pyparsing
     - python
     - requests >=2.18.4
@@ -52,6 +54,10 @@ requirements:
     - werkzeug >=0.14.1
 
 test:
+  requires:
+    - pip
+  commands:
+    - pip check
   imports:
     - Pegasus.DAX3
 
