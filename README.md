@@ -3,9 +3,9 @@ About python-pegasus-wms
 
 Home: https://pegasus.isi.edu
 
-Package license: Apache 2.0
+Package license: Apache-2.0
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/python-pegasus-wms-feedstock/blob/master/LICENSE.txt)
 
 Summary: This package contains the Python APIs for Pegasus WMS
 
