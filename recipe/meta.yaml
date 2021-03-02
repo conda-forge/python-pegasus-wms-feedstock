@@ -3,13 +3,15 @@
 {% set sha256 = "7c88018b03990f41c661ea687e583e315308826ba344804817ffd942702d799b" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "http://download.pegasus.isi.edu/pegasus/{{ version }}/pegasus-python-source-{{ version }}.tar.gz"
-  sha256: "{{ sha256 }}"
+  url: http://download.pegasus.isi.edu/pegasus/{{ version }}/pegasus-python-source-{{ version }}.tar.gz
+  sha256: 7c88018b03990f41c661ea687e583e315308826ba344804817ffd942702d799b
   patches:
+    # loosen requirements
+    - requirements.patch
     # remove call to deprecated commands module
     - commands.patch
     # fix indentation
@@ -22,9 +24,8 @@ source:
     - flask-cache.patch
 
 build:
-  noarch: python
-  number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+  number: 1
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -44,7 +45,7 @@ requirements:
     - markupsafe >=1.0
     - pamela
     - psycopg2 >=2.6
-    - pyopenssl >=16.2.0
+    - pyopenssl >=17.5.0
     - pyparsing
     - python
     - requests >=2.18.4
@@ -52,15 +53,19 @@ requirements:
     - werkzeug >=0.14.1
 
 test:
+  requires:
+    - pip
+  commands:
+    - pip check
   imports:
     - Pegasus.DAX3
 
 about:
-  home: "https://pegasus.isi.edu"
-  license: "Apache- 2.0"
-  license_family: "APACHE"
-  license_file: "LICENSE"
-  summary: "This package contains the Python APIs for Pegasus WMS"
+  home: https://pegasus.isi.edu
+  license: Apache-2.0
+  license_family: APACHE
+  license_file: LICENSE
+  summary: This package contains the Python APIs for Pegasus WMS
   description: |
     This package contains the Python APIs for Pegasus WMS, including:
 
