@@ -33,7 +33,6 @@ requirements:
     - pip
     - setuptools
   run:
-    - argparse >=1.4.0  # [py<37]
     - boto >=2.48.0
     - configobj
     # flask-cache itself needs flask <1.0.0a0
@@ -44,7 +43,6 @@ requirements:
     - itsdangerous >=0.24
     - jinja2 >=2.8.1
     - markupsafe >=1.0
-    - ordereddict >=1.1  # [py<37]
     - pamela
     - psycopg2 >=2.6
     - pyopenssl >=17.5.0

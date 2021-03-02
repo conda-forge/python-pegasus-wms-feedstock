@@ -1,5 +1,5 @@
 --- setup.py	2020-02-03 19:24:55.000000000 +0000
-+++ setup.py.2	2020-12-01 12:16:38.300000000 +0000
++++ setup.py.2	2021-03-02 16:26:37.370000000 +0000
 @@ -7,18 +7,17 @@
  home_dir = os.path.abspath(os.path.join(src_dir, "../../.."))
  
@@ -30,36 +30,32 @@
  ]
  
  excludes = ['Pegasus.test*']
-@@ -51,24 +50,24 @@
+@@ -50,25 +49,9 @@
+ def setup_installer_dependencies():
      global install_requires
  
-     if sys.version_info >= (3, 0):
+-    if sys.version_info >= (3, 0):
 -        install_requires.append('future==0.16.0')
-+        install_requires.append('future>=0.16.0')
- 
-     if sys.version_info[1] < 7:
+-
+-    if sys.version_info[1] < 7:
 -        install_requires.append('ordereddict==1.1')
 -        install_requires.append('argparse==1.4.0')
-+        install_requires.append('ordereddict>=1.1')
-+        install_requires.append('argparse>=1.4.0')
- 
-     if sys.version_info[1] <= 4:
+-
+-    if sys.version_info[1] <= 4:
 -        install_requires.append('SQLAlchemy==0.7.6')
 -        install_requires.append('pysqlite==2.6.0')
-+        install_requires.append('SQLAlchemy>=0.7.6')
-+        install_requires.append('pysqlite>=2.6.0')
- 
-     else:
+-
+-    else:
 -        install_requires.append('SQLAlchemy==0.8.0')
-+        install_requires.append('SQLAlchemy>=0.8.0')
- 
-     if subprocess.call(["which", "pg_config"]) == 0:
+-
+-    if subprocess.call(["which", "pg_config"]) == 0:
 -        install_requires.append('psycopg2==2.6')
-+        install_requires.append('psycopg2>=2.6')
- 
-     if subprocess.call(["which", "mysql_config"]) == 0:
+-
+-    if subprocess.call(["which", "mysql_config"]) == 0:
 -        install_requires.append('MySQL-python==1.2.5')
-+        install_requires.append('MySQL-python>=1.2.5')
++    install_requires.append('future>=0.16.0')
++    install_requires.append('SQLAlchemy>=0.8.0')
++    install_requires.append('psycopg2>=2.6')
  
  
  #
