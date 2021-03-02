@@ -24,7 +24,8 @@ source:
     - flask-cache.patch
 
 build:
-  number: 1
+  noarch: python
+  number: 2
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
