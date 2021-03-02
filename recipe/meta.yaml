@@ -30,7 +30,7 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
     - setuptools
   run:
@@ -48,7 +48,7 @@ requirements:
     - psycopg2 >=2.6
     - pyopenssl >=17.5.0
     - pyparsing
-    - python
+    - python >=3.6
     - requests >=2.18.4
     - sqlalchemy >=0.8.0
     - werkzeug >=0.14.1
